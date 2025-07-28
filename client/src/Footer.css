@@ -1,0 +1,22 @@
+footer {
+  min-height: 100px;
+  width: 100vw;
+background-image: linear-gradient(111.1deg, rgb(69, 150, 164) 2.5%, rgb(17, 20, 34) 100.3%);  color: #0f0e0e;
+  text-align: center;
+  padding: 1.2rem 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-top: 1px solid #ee8e8e;
+  margin-top: 2rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+
+footer p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  margin: 0;
+  color: #090808;
+}
