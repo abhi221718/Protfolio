@@ -11,7 +11,7 @@ const Hero = () => {
         </div>
         <div className="hero-img-wrapper">
           <span className="hero-img-ring"></span>
-          <img src={heroImg} alt="Profile" className="hero-img" />
+          <img src={heroImg} alt="Hero profile" className="hero-img" />
         </div>
       </div>
     </section>

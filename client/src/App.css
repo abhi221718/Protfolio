@@ -1,3 +1,42 @@
+/* Day/Night Theme Support */
+:root {
+  --bg-main: linear-gradient(90deg, rgb(18, 18, 22) 0%, rgb(61, 62, 66) 100%);
+  --text-main: #2f2c2c;
+  --accent: #d7263d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: linear-gradient(90deg, #18191a 0%, #232323 100%);
+    --text-main: #e3e3e3;
+    --accent: #ffc72c;
+  }
+}
+
+.hero-section {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+#about {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+#projects {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+#contact {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+footer.footer {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
 #root {
   width: 100vw;
   margin: 0;
@@ -26,6 +65,7 @@
   color: #2f2c2c;
 }
 
+
 .hero-content {
   display: flex;
   align-items: center;
@@ -33,8 +73,43 @@
   gap: 2rem;
 }
 .hero-text {
-    text-align: center;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
   }
+  .hero-section {
+    padding: 1.2rem 0.5rem;
+    min-height: unset;
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+  }
+  .hero-section p {
+    font-size: 1.05rem;
+  }
+  .hero-img-wrapper {
+    margin-bottom: 0.7rem;
+  }
+  .hero-img-ring {
+    width: 140px;
+    height: 140px;
+    border-width: 7px;
+  }
+  .hero-img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0.5rem;
+  }
+}
 
 
 .hero-section h1 {
@@ -69,7 +144,7 @@
   top: 50%;
   left: 55%;
   transform: translate(-50%, -50%);
-  width: 350px;
+  width: 320px;
   height: 380px;
   border-radius: 60%;
   border: 12px solid #fff;
@@ -92,8 +167,8 @@
 
 @media (max-width: 700px) {
   .hero-img-ring {
-    width: 270px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     border-width: 9px;
   }
   .hero-img {
@@ -205,10 +280,15 @@
   margin: 0 0 1.2rem 0;
   padding: 0;
 }
+.about-btn {
+  margin-bottom: 0.7rem;
+}
 #about-btns {
   display: flex;
   gap: 1.2rem;
   margin-top: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .about-btn {
   background: #ffc72c;
@@ -234,14 +314,31 @@
     gap: 2rem;
     padding: 2.5rem 0.7rem;
     text-align: center;
+    min-height: unset;
   }
   #about-photo-frame {
     margin-right: 0;
     margin-bottom: 1.5rem;
+    min-width: 120px;
+    min-height: 120px;
+  }
+  #about-photo-frame img,
+  #about-photo-frame .about-img-ring img {
+    width: 100px;
+    height: 120px;
+    max-width: 100%;
+    max-height: 140px;
   }
   #about-content {
     align-items: center;
     text-align: center;
+    max-width: 98vw;
+  }
+  #about-btns {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+    justify-content: center;
   }
 }
 

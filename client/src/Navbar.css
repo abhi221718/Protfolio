@@ -1,3 +1,102 @@
+/* Sidebar styles for mobile */
+.desktop-only {
+  display: flex;
+}
+.mobile-only {
+  display: none;
+}
+@media (max-width: 900px) {
+  .desktop-only {
+    display: none !important;
+  }
+  .mobile-only {
+    display: inline-flex !important;
+    background: none;
+    border: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 120;
+    margin-left: auto;
+  }
+  .sidebar-toggle .bar {
+    width: 28px;
+    height: 3px;
+    background: #d7263d;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+    display: block;
+  }
+  .sidebar-overlay {
+    display: none;
+  }
+  .sidebar-overlay.open {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 110;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 240px;
+    height: 100vh;
+    background: #18191a;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.12);
+    z-index: 120;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.2rem 1.2rem 1.2rem;
+    transition: right 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+  .sidebar.open {
+    right: 0;
+  }
+  .sidebar .close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.2rem;
+    align-self: flex-end;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .sidebar .close-btn:hover {
+    color: #d7263d;
+  }
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .sidebar li {
+    width: 100%;
+  }
+  .sidebar a {
+    color: #dacacc;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 500;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    transition: background 0.2s, color 0.2s;
+  }
+  .sidebar a:hover, .sidebar a:focus {
+    background: #d7263d;
+    color: #fff;
+  }
+}
 
 .navbar {
   display: flex;
@@ -23,8 +122,14 @@
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
-  color: #d7263d;
+  color: #dcb8bd;
   margin: 0;
+  position: relative;
+  z-index: 2;
+}
+.navbar h1, .navbar h1 * {
+  text-shadow: 0 2px 16px #e6d6d888, 0 0 32px rgba(9, 8, 8, 0.2);
+  filter: drop-shadow(0 0 12px #e5dfe088) drop-shadow(0 0 32px rgba(17, 15, 15, 0.2));
 }
 
 .navbar ul {
